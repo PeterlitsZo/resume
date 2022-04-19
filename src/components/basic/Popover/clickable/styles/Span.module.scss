@@ -1,0 +1,9 @@
+@use "./clickable";
+
+.span {
+    @include clickable.base;
+
+    &._active {
+        @include clickable.active;
+    }
+}

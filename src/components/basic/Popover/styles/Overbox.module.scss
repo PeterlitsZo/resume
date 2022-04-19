@@ -1,0 +1,94 @@
+@use "../../../../mixin";
+
+@mixin begin-state {
+    opacity: 0;
+}
+
+@mixin state-trans {
+    transition: opacity .3s, outline .3s;
+}
+
+@mixin end-state {
+    opacity: 1;
+}
+
+.overbox {
+    @include begin-state;
+    @include state-trans;
+
+    background-color: white;
+    color: black;
+    border: 1px black solid;
+    position: absolute;
+    border-radius: 0.5rem;
+    width: 25rem;
+    outline: 0px solid var(--prime-transparent);
+
+    &._show {
+        @include end-state;
+    }
+
+    &._active {
+        outline: 4px solid var(--prime-transparent);
+    }
+}
+
+.content {
+    @include mixin.p_and_ul_in_content;
+
+    padding: 0.5rem;
+}
+
+.toolkit {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    align-items: center;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    user-select: none;
+
+    &> svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .space {
+        flex: 1;
+    }
+}
+
+.button {
+    display: flex;
+    background-color: var(--danger);
+    color: var(--danger);
+    border: 1px var(--danger-dark) solid;
+    border-radius: 999999px;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    place-items: center;
+    place-content: center;
+    transition: background-color .4s, border-color .4s, color .4s;
+
+    & svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &:hover {
+        background-color: var(--danger-dark);
+        border-color: var(--danger-dark);
+        color: white;
+    }
+}
+
+.drag {
+    cursor: grab;
+    transition: background-color .4s;
+
+    &:hover {
+        background-color: #EEE
+    }
+}

@@ -1,0 +1,18 @@
+.title {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid black;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.address {
+    font-size: 1rem;
+    color: #444;
+}

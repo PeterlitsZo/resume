@@ -1,0 +1,11 @@
+@mixin base {
+    color: var(--prime);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: .3s color, .3s background-color;
+}
+
+@mixin active {
+    color: var(--prime-dark);
+    background-color: #EEE;
+}

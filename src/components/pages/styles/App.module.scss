@@ -1,0 +1,56 @@
+@use "../../../vars";
+
+.root {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: vars.$shadow;
+    width: 210mm;
+    height: 297mm;
+    border: 1px solid black;
+
+    @media screen and (min-width: vars.$width) {
+        display: flex;
+    }
+
+    @media print {
+        display: flex;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.error_msg {
+    background-color: white;
+    box-shadow: vars.$shadow;
+    max-width: 100mm;
+    padding: 1rem;
+
+    @media screen and (min-width: vars.$width) {
+        display: none;
+    }
+
+    @media print {
+        display: none;
+    }
+}
+
+.body {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.25rem 2rem;
+    flex: 1;
+}
+
+.left {
+    flex: 100;
+}
+
+.right {
+    flex: 197;
+}
+
+.footer {
+    border-top: 1px black solid;
+    padding: 1.25rem 2rem;
+}

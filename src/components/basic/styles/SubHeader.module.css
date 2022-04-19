@@ -1,0 +1,26 @@
+.subHeader {
+    display: flex;
+    gap: 0.25rem;
+    place-items: center;
+    /* place-content: center; */
+    margin: 0.325rem 0 0 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.subHeader:first-child {
+    margin-top: 0;
+}
+
+.title {
+    flex: 1;
+}
+
+.helper {
+    color: #444;
+    font-size: 0.675rem;
+    /* background-color: #EEE; */
+    padding: 0.0375rem 0.5rem;
+    border-radius: 999999px;
+    border: solid 1px #CCC;
+}

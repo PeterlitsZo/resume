@@ -1,0 +1,6 @@
+@mixin p_and_ul_in_content {
+    p, ul {
+        margin: 0.125rem 0 0.25rem 0.5rem;
+        padding: 0;
+    }
+}
