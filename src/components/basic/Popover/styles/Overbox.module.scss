@@ -34,7 +34,7 @@
 }
 
 .content {
-    @include mixin.p_and_ul_in_content;
+    @include mixin.in_content;
 
     padding: 0.5rem;
 }

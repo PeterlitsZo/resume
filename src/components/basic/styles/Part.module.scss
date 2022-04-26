@@ -1,5 +1,5 @@
 @use "../../../mixin";
 
 .part {
-    @include mixin.p_and_ul_in_content;
+    @include mixin.in_content;
 }
