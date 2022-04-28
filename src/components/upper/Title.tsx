@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 
-import styles from './styles/Title.module.css';
+import styles from './styles/Title.module.scss';
 
 const Title: Component = () => {
   return (

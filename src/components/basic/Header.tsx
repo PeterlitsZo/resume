@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 
-import styles from './styles/Header.module.css';
+import styles from './styles/Header.module.scss';
 
 const Header: Component = ({children}) => {
   return (

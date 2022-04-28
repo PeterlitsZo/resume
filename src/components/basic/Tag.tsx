@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 
-import styles from './styles/Tag.module.css';
+import styles from './styles/Tag.module.scss';
 
 const Tag: Component = ({children}) => {
   return (

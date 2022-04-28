@@ -2,7 +2,7 @@ import type { Component } from 'solid-js';
 
 import classNames from 'classnames';
 
-import styles from './styles/SubHeader.module.css';
+import styles from './styles/SubHeader.module.scss';
 
 interface HeaderCompoentProps {
   class?: string;
