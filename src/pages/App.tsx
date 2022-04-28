@@ -1,12 +1,12 @@
 import type { Component } from 'solid-js';
 
-import Title from '../upper/Title';
-import Left from '../upper/Left/Left';
-import Right from '../upper/Right';
-import Footer from '../upper/Footer';
+import Title from '../components/upper/Title';
+import Left from '../components/upper/Left/Left';
+import Right from '../components/upper/Right';
+import Footer from '../components/upper/Footer';
 
 import styles from './styles/App.module.scss';
-import vars from '../../_vars.scss';
+import vars from '../_vars.scss';
 
 const getVars = () => {
   const body = vars.match(/:export\s*{(.*)}/s);
