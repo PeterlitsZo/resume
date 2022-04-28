@@ -1,4 +1,4 @@
-import { Component, splitProps, createEffect, createSignal } from 'solid-js';
+import { Component, splitProps } from 'solid-js';
 
 import State, { isActive } from '../state';
 

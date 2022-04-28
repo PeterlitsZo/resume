@@ -51,7 +51,8 @@ const Popover: Component<PopoverProps> = (props) => {
 }
 
 const PopoverWithSpan: Component<PopoverPropsWithSpan & PopoverPropsSignal> = (props) => {
-  const [mouseEvent, _propsWithoutMouseEvent] = splitProps(props, ['onmouseenter', 'onmouseleave']);
+  const [mouseEvent, _propsWithoutMouseEvent]
+    = splitProps(props, ['onmouseenter', 'onmouseleave']);
   let ref = undefined as HTMLSpanElement | undefined;
 
   return (
@@ -60,10 +61,14 @@ const PopoverWithSpan: Component<PopoverPropsWithSpan & PopoverPropsSignal> = (p
         ref={ref}
         state={props.state}
         {...mouseEvent}
-      >{ props.inSpan }</Span>
+      >
+        { props.inSpan }
+      </Span>
       <Show when={props.state() !== State.close}>
         <Portal>
-          <Overbox span={ref} {...props} title={props.inSpan}>{props.children}</Overbox>
+          <Overbox span={ref} {...props} title={props.inSpan}>
+            {props.children}
+          </Overbox>
         </Portal>
       </Show>
     </>
@@ -71,15 +76,25 @@ const PopoverWithSpan: Component<PopoverPropsWithSpan & PopoverPropsSignal> = (p
 }
 
 const PopoverWithA: Component<PopoverPropsWithA & PopoverPropsSignal> = (props) => {
-  const [mouseEvent, _propsWithoutMouseEvent] = splitProps(props, ['onmouseenter', 'onmouseleave']);
+  const [mouseEvent, _propsWithoutMouseEvent]
+    = splitProps(props, ['onmouseenter', 'onmouseleave']);
   let ref = undefined as HTMLAnchorElement | undefined;
 
   return (
     <>
-      <A href={props.href} ref={ref} state={props.state} {...mouseEvent}>{ props.inA }</A>
+      <A
+        href={props.href}
+        ref={ref}
+        state={props.state}
+        {...mouseEvent}
+      >
+        { props.inA }
+      </A>
       <Show when={props.state() !== State.close}>
         <Portal>
-          <Overbox span={ref} {...props} title={props.inA}>{props.children}</Overbox>
+          <Overbox span={ref} {...props} title={props.inA}>
+            {props.children}
+          </Overbox>
         </Portal>
       </Show>
     </>
