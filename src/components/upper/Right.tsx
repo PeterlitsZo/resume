@@ -23,10 +23,13 @@ const Right: Component<RightProps> = (props) => {
       <Header>项目</Header>
       <SubHeader>
         <SubHeader.Title>ACM Homepage</SubHeader.Title>
-        <SubHeader.Helper>github.com/PeterlitsZo/ACMHomepage</SubHeader.Helper>
         <SubHeader.Helper>2021.11 - now</SubHeader.Helper>
       </SubHeader>
-      <p>主要开发者，敏捷教练，产品负责人</p>
+      <p>身份：主要开发者，敏捷教练，产品负责人</p>
+      <p>
+        网址：
+        <A href="https://www.github.com/PeterlitsZo/ACMHomepage">github.com/PeterlitsZo/ACMHomepage</A>
+      </p>
       <ul>
         <li>一个全栈项目。后端基于 Node.js / Express + MariaDB，前端基于 React + TypeScript。目前代码行数为 6k+（包含测试），200+ 个提交。正在申请软件著作权。</li>
         <li>作为我校 ACM 集训队的主页，目前完成了用户认证，新闻浏览等一系列功能。</li>
@@ -39,10 +42,13 @@ const Right: Component<RightProps> = (props) => {
       </ul>
       <SubHeader>
         <SubHeader.Title>East</SubHeader.Title>
-        <SubHeader.Helper>github.com/PeterlitsZo/East</SubHeader.Helper>
         <SubHeader.Helper>2020.04 - 2020.05</SubHeader.Helper>
       </SubHeader>
-      <p>所有者</p>
+      <p>身份：所有者</p>
+      <p>
+        网址：
+        <A href="https://www.github.com/PeterlitsZo/East">github.com/PeterlitsZo/East</A>
+      </p>
       <ul>
         <li>信息检索工具。使用 Go 语言。</li>
         <li>用户友好。使用自主设计的数据结构，和 Lexer（从用户输入的命令字符串到 token stream），和利用 goyacc 创建的 LALR 编译器（从 token stream 到 AST），将用户输入的字符串解析为程序能够处理的语法树，故能支持布尔运算。</li>

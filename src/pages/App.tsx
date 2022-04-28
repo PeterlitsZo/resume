@@ -36,9 +36,6 @@ const App: Component = () => {
         </div>
         <Footer class={styles.footer}/>
       </div>
-      <div class={styles.error_msg}>
-        Please use the device (width &gt; {vars.width}) to view my resume.
-      </div>
     </>
   );
 };
