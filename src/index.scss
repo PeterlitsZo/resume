@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;800&display=swap');
 
-$prime: hsl(142, 80%, 30%);
+$prime: hsl(142, 80%, 25%);
 
 :root {
     --prime: #{$prime};
@@ -16,6 +16,7 @@ html {
     font-family: "Noto Serif SC", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif, "宋体";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
 }
 
 body {
