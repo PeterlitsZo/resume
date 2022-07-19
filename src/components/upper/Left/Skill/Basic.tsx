@@ -10,6 +10,8 @@ import Algorithm from './elements/Algorithm';
 import NetworkSecurity from './elements/NetworkSecurity';
 import ComputerGraphics from './elements/ComputerGraphics';
 import DesignPattern from './elements/DesignPattern';
+import ML from './elements/ML';
+import Professionalism from './elements/Professionalism';
 
 const Basic = () => (
   <>
@@ -20,7 +22,7 @@ const Basic = () => (
     </p>
     <p>
       <Tag>了解</Tag>
-      <NetworkSecurity />，<ComputerGraphics />，<DesignPattern />
+      <NetworkSecurity />，<ComputerGraphics />，<DesignPattern />，<ML />，<Professionalism />
     </p>
   </>
 )

@@ -35,6 +35,7 @@ const Overbox: Component<OverboxProps> = (props) => {
   onMount(async () => {
     if (!props.span || !ref) return;
     const {x, y} = await computePosition(props.span, ref, {
+      placement: "top",
       middleware: [
         offset(convertRemToPixels(0.125)),
         flip(),

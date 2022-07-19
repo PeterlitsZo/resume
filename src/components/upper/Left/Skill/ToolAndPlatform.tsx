@@ -10,7 +10,7 @@ const ToolAndPlatform = () => (
   <>
     <SubHeader>工具与平台</SubHeader>
     <p><Tag>熟悉</Tag><Git />，Docker，<Linux /></p>
-    <p><Tag>了解</Tag>nginx，<MySQLAndMariaDB />，<Redis /></p>
+    <p><Tag>了解</Tag>nginx，<MySQLAndMariaDB />，<Redis />，Rabbit MQ，Node.js，Nest.js</p>
   </>
 )
 

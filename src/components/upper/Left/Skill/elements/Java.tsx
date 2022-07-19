@@ -6,6 +6,7 @@ const Java = () => (
     <SubHeader>书籍</SubHeader>
     <ul>
       <li>《Head First Java》。</li>
+      <li>《Java 技术手册》。</li>
     </ul>
     <SubHeader>绩点</SubHeader>
     <ul>

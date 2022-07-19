@@ -10,7 +10,7 @@ const Framework = () => (
     <SubHeader>框架</SubHeader>
     <p><Tag>熟悉</Tag><React /></p>
     <p><Tag>一般</Tag><Django />，Vue</p>
-    <p><Tag>了解</Tag><Solidjs />，Express</p>
+    <p><Tag>了解</Tag><Solidjs />，Express，Next.js</p>
   </>
 )
 

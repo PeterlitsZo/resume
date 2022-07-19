@@ -21,12 +21,18 @@ const Link = () => {
             </ul>
           </Popover>
         </li>
-        <li><A href="https://stackoverflow.com/users/13031497/peterlits-zo">StackOverflow://Peterlits-Zo</A></li>
+        <li>
+          <Popover inA="StackOverflow://Peterlits-Zo" href="https://stackoverflow.com/users/13031497/peterlits-zo">
+            <ul>
+              <li>贡献值达到 414。</li>
+            </ul>
+          </Popover>
+        </li>
         <li>
           <Popover inA="dev.to://PeterlitsZo" href="https://dev.to/peterlitszo">
             <SubHeader>浏览量</SubHeader>
             <ul>
-              <li>截至目前，浏览量已经达到了 610。</li>
+              <li>截至目前，浏览量已经达到了 1.1k+。</li>
             </ul>
             <SubHeader>内容</SubHeader>
             <SubSubHeader>安全</SubSubHeader>

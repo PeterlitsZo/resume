@@ -11,7 +11,7 @@ $prime: hsl(142, 80%, 25%);
 }
 
 html {
-    font-size: 13px;
+    font-size: 12px;
     background-color: #EEE;
     font-family: "Noto Serif SC", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif, "宋体";
     -webkit-font-smoothing: antialiased;
@@ -48,6 +48,10 @@ p {
 
 ul {
     list-style-position: inside;
+
+    li:not(:last-child) {
+        margin-bottom: 0.25rem;
+    }
 }
 
 a {
