@@ -20,8 +20,8 @@
 .body {
     display: flex;
     flex-direction: row;
-    gap: 2.5rem;
-    padding: 1.25rem 2rem;
+    gap: vars.$left-right-gap;
+    padding: vars.$parts-padding;
     flex: 1;
 
     @media screen and (max-width: vars.$width) {
@@ -35,10 +35,10 @@
 }
 
 .right {
-    flex: 225;
+    flex: 190;
 }
 
 .footer {
-    border-top: 1px black solid;
-    padding: 1.25rem 2rem;
+    border-top: 1px solid vars.$bars-color;
+    padding: vars.$parts-padding;
 }

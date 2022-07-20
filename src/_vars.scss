@@ -1,6 +1,9 @@
 $width: 220mm;
 $header-margin-top: 1rem;
 $shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+$left-right-gap: 1.5rem;
+$parts-padding: 1.125rem calc($left-right-gap + 0.5rem);
+$bars-color: #AAA;
 
 :export {
   width: $width;
