@@ -4,6 +4,7 @@ import A from '../basic/A';
 import Part from '../basic/Part';
 import Header from '../basic/Header';
 import SubHeader from '../basic/SubHeader';
+import SubSubHeader from '../basic/SubSubHeader';
 
 interface RightProps {
     class?: string;
@@ -27,12 +28,13 @@ const Right: Component<RightProps> = (props) => {
         <SubHeader.Title>字节跳动</SubHeader.Title>
         <SubHeader.Helper>2022.7 - now</SubHeader.Helper>
       </SubHeader>
-      <div style={{ 'column-count': 2, 'column-gap': '0.125rem' }}>
-        <ul>
-          <li>目前在使用 Go 语言，为边缘系统的运维自动化做工作。</li>
-          <li>工作积累：累计 3 个 gitlab MR、约 10+ 个 commit，设计到 feature、bugfix、重构和文档更新。</li>
-        </ul>
-      </div>
+      <SubSubHeader>RSER | 面向运维自动化的资源管理工具</SubSubHeader>
+      <ul style={{ 'column-count': 2, 'column-gap': '0.125rem' }}>
+        <li>使用 Golang 语言，为边缘系统的运维自动化做工作：基于 MongoDB，监控和配置配置系统服务。</li>
+        <li>工作积累：累计 3 个 gitlab MR、约 10+ 个 commit，设计到 feature、bugfix、重构和文档更新。</li>
+        <li>实现需求 - 事务功能：基于 MongoDB 的事务功能，设计了 PRC-style HTTP 接口，实现了批量操作（如果有一个操作不合格就回滚，避免出现某个操作失败，难以恢复的问题）。</li>
+        <li>实现需求 - Watch 功能（有序实现中）：实现观察者模型。</li>
+      </ul>
       <Header>项目</Header>
       <SubHeader>
         <SubHeader.Title>ACM Homepage</SubHeader.Title>
