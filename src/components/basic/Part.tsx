@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js';
+import type { ParentComponent } from 'solid-js';
 
 import classNames from 'classnames';
 
@@ -8,7 +8,7 @@ interface PartProps {
     class?: string;
 }
 
-const Left: Component<PartProps> = (props) => {
+const Left: ParentComponent<PartProps> = (props) => {
   const { class: className, children } = props;
 
   return (
