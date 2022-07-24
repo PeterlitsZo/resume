@@ -5,6 +5,7 @@ import Python from './elements/Python';
 import CAndCpp from './elements/CAndCpp';
 import JavaScriptAndTypeScript from './elements/JavaScriptAndTypeScript'
 import Rust from './elements/Rust';
+import Shell from './elements/Shell';
 import Java from './elements/Java';
 
 const Language = () => (
@@ -16,7 +17,7 @@ const Language = () => (
     </p>
     <p>
       <Tag>1k - 5k</Tag>
-      <Rust />，Shell，<Java />
+      <Rust />，<Shell />，<Java />
     </p>
   </>
 )

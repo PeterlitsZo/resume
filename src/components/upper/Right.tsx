@@ -29,7 +29,7 @@ const Right: Component<RightProps> = (props) => {
       <SubSubHeader>RSER | 面向运维自动化的资源管理工具</SubSubHeader>
       <ul style={{ 'column-count': 2, 'column-gap': '0.25rem' }}>
         <li>使用 Golang 语言，为边缘系统的运维自动化做工作：基于 MongoDB，监控和配置配置系统服务。</li>
-        <li>工作积累：累计 3 个 gitlab MR、约 20+ 个 commit，涉及到 feature、bugfix、重构和文档更新。</li>
+        <li>工作积累：累计 4 个 gitlab MR、约 30+ 个 commit，涉及到 feature、bugfix、重构和文档更新。</li>
         <li>实现需求 - 事务功能（实现中）：基于 MongoDB 的事务功能，设计了 PRC-style HTTP 接口，实现了批量操作（如果有一个操作不合格就回滚，避免出现某个操作失败，难以恢复的问题）。</li>
         <li>实现需求 - Watch 功能（实现中）：实现观察者模型。</li>
       </ul>
