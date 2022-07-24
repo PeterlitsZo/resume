@@ -1,4 +1,4 @@
-import { Component, splitProps } from 'solid-js';
+import { ParentComponent, splitProps } from 'solid-js';
 
 import State, { isActive } from '../state';
 
@@ -10,11 +10,13 @@ interface AProps {
   ref?: HTMLAnchorElement;
   href?: string;
   state: () => State;
-  onmouseenter: () => void;
-  onmouseleave: () => void;
+  onpointerenter: (event: PointerEvent) => void;
+  onpointerdown: (event: PointerEvent) => void;
+  onpointerleave: (event: PointerEvent) => void;
+  onpointerup: (event: PointerEvent) => void;
 }
 
-const A: Component<AProps> = (props) => {
+const A: ParentComponent<AProps> = (props) => {
   const [state, others] = splitProps(props, ['state']);
   const classList = () => {
     return {
@@ -24,7 +26,11 @@ const A: Component<AProps> = (props) => {
   };
 
   return (
-    <ABase classList={classList()} {...others} />
+    <ABase
+      classList={classList()}
+      {...others}
+      onclick={e => e.preventDefault()}
+    />
   );
 }
 

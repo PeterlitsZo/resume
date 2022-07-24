@@ -1,9 +1,9 @@
 import { Portal, Show } from 'solid-js/web';
 import { createSignal, mergeProps, splitProps } from 'solid-js';
-import type { Component, JSXElement, Accessor, Setter } from 'solid-js';
+import type { ParentComponent, JSXElement, Accessor, Setter } from 'solid-js';
 
 import State from './state';
-import { onmouseenter, onmouseleave } from './clickable/utils';
+import { onpointerenter, onpointerleave, onpointerdown, onpointerup } from './clickable/utils';
 
 import Overbox from './Overbox';
 import Span from './clickable/Span';
@@ -23,24 +23,30 @@ interface PopoverPropsWithA extends PopoverPropsBase {
 interface PopoverPropsSignal {
     state: Accessor<State>;
     setState: Setter<State>;
-    onmouseenter: () => void;
-    onmouseleave: () => void;
+    onpointerenter: (event: PointerEvent) => void;
+    onpointerleave: (event: PointerEvent) => void;
+    onpointerdown: (event: PointerEvent) => void;
+    onpointerup: (event: PointerEvent) => void;
 }
 
 type PopoverProps = PopoverPropsWithA | PopoverPropsWithSpan;
 
-const Popover: Component<PopoverProps> = (props) => {
+const Popover: ParentComponent<PopoverProps> = (props) => {
   const [state, setState] = createSignal(State.close);
   const [timeoutId, setTimeoutId] = createSignal(undefined as number | undefined);
 
-  const mouseEnterHandler = onmouseenter(state, setState, timeoutId, setTimeoutId);
-  const mouseLeaveHandler = onmouseleave(state, setState, timeoutId, setTimeoutId);
+  const pointerEnterHandler = onpointerenter(state, setState, timeoutId, setTimeoutId);
+  const pointerDownHandler = onpointerdown(state, setState, timeoutId, setTimeoutId);
+  const pointerLeaveHandler = onpointerleave(state, setState, timeoutId, setTimeoutId);
+  const pointerUpHandler = onpointerup(state, setState, timeoutId, setTimeoutId);
 
   const mergedProps = mergeProps({
     state,
     setState,
-    onmouseleave: mouseLeaveHandler,
-    onmouseenter: mouseEnterHandler
+    onpointerenter: pointerEnterHandler,
+    onpointerdown: pointerDownHandler,
+    onpointerleave: pointerLeaveHandler,
+    onpointerup: pointerUpHandler,
   }, props);
 
   if ('inSpan' in mergedProps) {
@@ -50,9 +56,9 @@ const Popover: Component<PopoverProps> = (props) => {
   }
 }
 
-const PopoverWithSpan: Component<PopoverPropsWithSpan & PopoverPropsSignal> = (props) => {
-  const [mouseEvent, _propsWithoutMouseEvent]
-    = splitProps(props, ['onmouseenter', 'onmouseleave']);
+const PopoverWithSpan: ParentComponent<PopoverPropsWithSpan & PopoverPropsSignal> = (props) => {
+  const [pointerEvent, _propsWithoutMouseEvent]
+    = splitProps(props, ['onpointerenter', 'onpointerleave', 'onpointerdown', 'onpointerup']);
   let ref = undefined as HTMLSpanElement | undefined;
 
   return (
@@ -60,7 +66,7 @@ const PopoverWithSpan: Component<PopoverPropsWithSpan & PopoverPropsSignal> = (p
       <Span
         ref={ref}
         state={props.state}
-        {...mouseEvent}
+        {...pointerEvent}
       >
         { props.inSpan }
       </Span>
@@ -75,9 +81,9 @@ const PopoverWithSpan: Component<PopoverPropsWithSpan & PopoverPropsSignal> = (p
   )
 }
 
-const PopoverWithA: Component<PopoverPropsWithA & PopoverPropsSignal> = (props) => {
-  const [mouseEvent, _propsWithoutMouseEvent]
-    = splitProps(props, ['onmouseenter', 'onmouseleave']);
+const PopoverWithA: ParentComponent<PopoverPropsWithA & PopoverPropsSignal> = (props) => {
+  const [pointerEvent, _propsWithoutMouseEvent]
+    = splitProps(props, ['onpointerenter', 'onpointerleave', 'onpointerdown', 'onpointerup']);
   let ref = undefined as HTMLAnchorElement | undefined;
 
   return (
@@ -86,13 +92,13 @@ const PopoverWithA: Component<PopoverPropsWithA & PopoverPropsSignal> = (props) 
         href={props.href}
         ref={ref}
         state={props.state}
-        {...mouseEvent}
+        {...pointerEvent}
       >
         { props.inA }
       </A>
       <Show when={props.state() !== State.close}>
         <Portal>
-          <Overbox span={ref} {...props} title={props.inA}>
+          <Overbox span={ref} {...props} title={props.inA} link={props.href}>
             {props.children}
           </Overbox>
         </Portal>

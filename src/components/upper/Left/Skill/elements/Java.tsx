@@ -1,4 +1,4 @@
-import Popover from '../../../../basic/Popover/Popover';
+import Popover from '../../../../basic/Popover';
 import SubHeader from '../../../../basic/SubHeader';
 
 const Java = () => (

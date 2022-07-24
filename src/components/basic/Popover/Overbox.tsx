@@ -1,5 +1,5 @@
 import { onMount, createSignal, Show } from 'solid-js';
-import type { Component, Accessor, Setter, JSXElement } from 'solid-js';
+import type { ParentComponent, Accessor, Setter, JSXElement } from 'solid-js';
 import { computePosition, flip, shift, offset } from '@floating-ui/dom';
 import classNames from 'classnames';
 
@@ -9,18 +9,25 @@ import Move from './asserts/Move';
 import X from './asserts/X';
 
 import styles from './styles/Overbox.module.scss';
+import A from '../A';
 
 interface OverboxProps {
   span?: HTMLSpanElement;
   title?: JSXElement;
+  link?: string;
   state: Accessor<State>;
   setState: Setter<State>;
-  onmouseleave: () => void;
-  onmouseenter: () => void;
+  onpointerenter: (event: PointerEvent) => void;
+  onpointerdown: (event: PointerEvent) => void;
+  onpointerup: (event: PointerEvent) => void;
+  onpointerleave: (event: PointerEvent) => void;
 }
 
-const Overbox: Component<OverboxProps> = (props) => {
+const Overbox: ParentComponent<OverboxProps> = (props) => {
+  // `ref` to self.
   let ref = undefined as HTMLDivElement | undefined;
+
+  // Self's position.
   const [x, setX] = createSignal(0);
   const [y, setY] = createSignal(0);
   const setGoodX = (ref: HTMLDivElement, x: number) => {
@@ -32,6 +39,7 @@ const Overbox: Component<OverboxProps> = (props) => {
     setY(result);
   }
 
+  // When self is mounted: We need clac self's position.
   onMount(async () => {
     if (!props.span || !ref) return;
     const {x, y} = await computePosition(props.span, ref, {
@@ -46,14 +54,15 @@ const Overbox: Component<OverboxProps> = (props) => {
     setY(y);
   });
 
+  // Deal with draging.
   const [cursorXOffset, setCursorXOffset] = createSignal(0);
   const [cursorYOffset, setCursorYOffset] = createSignal(0);
-  const dragStartHandler = (event: MouseEvent) => {
+  const dragStartHandler = (event: PointerEvent) => {
     props.setState(State.pinAndDrag);
     setCursorXOffset(event.pageX - x());
     setCursorYOffset(event.pageY - y());
-    document.addEventListener('mousemove', dragHandler);
-    document.addEventListener('mouseup', dragEndHandler);
+    document.addEventListener('pointermove', dragHandler);
+    document.addEventListener('pointerup', dragEndHandler);
   };
   const dragHandler = (event: MouseEvent) => {
     if (!ref) return;
@@ -67,10 +76,17 @@ const Overbox: Component<OverboxProps> = (props) => {
     setGoodX(ref, event.pageX - cursorXOffset());
     setGoodY(ref, event.pageY - cursorYOffset());
     props.setState(State.pinAndHover);
-    document.removeEventListener('mousemove', dragHandler);
-    document.removeEventListener('mouseup', dragEndHandler);
+    document.removeEventListener('pointermove', dragHandler);
+    document.removeEventListener('pointerup', dragEndHandler);
   };
 
+  // Deal with closing.
+  const closeHandler = (event: MouseEvent) => {
+    props.setState(State.waitToClose);
+    setTimeout(() => { props.setState(State.close) }, 50);
+  }
+
+  // If self is mounted firstly.
   const [firstMount, setFirstMount] = createSignal(true);
   onMount(async () => {
     await new Promise((resolve)  => {
@@ -78,6 +94,8 @@ const Overbox: Component<OverboxProps> = (props) => {
     });
     setFirstMount(false);
   });
+
+  console.log(props.state());
 
   return (
     <div
@@ -88,20 +106,32 @@ const Overbox: Component<OverboxProps> = (props) => {
       }}
       style={{ left: x() + 'px', top: y() + 'px' }}
       ref={ref}
-      onmouseenter={props.onmouseenter}
-      onmouseleave={props.onmouseleave}
+      onpointerenter={props.onpointerenter}
+      onpointerdown={props.onpointerdown}
+      onpointerup={props.onpointerup}
+      onpointerleave={props.onpointerleave}
     >
-      <div class={classNames(styles.toolkit, styles.drag)} onmousedown={dragStartHandler}>
+      <div class={classNames(styles.toolkit, styles.drag)} onpointerdown={dragStartHandler}>
         <Move />
         <Show when={props.title}>
           <span>{props.title}</span>
         </Show>
         <span class={styles.space} />
-        <button class={styles.button} onclick={() => props.setState(State.close)}>
+        <button
+          class={styles.button}
+          onclick={closeHandler}
+          aria-label="Close button"
+          type="button"
+        >
           <X />
         </button>
       </div>
       <div class={styles.content}>{props.children}</div>
+      <Show when={props.link}>
+        <div class={styles.toolkitBottom}>
+          <A href={props.link}>Click to visit.</A>
+        </div>
+      </Show>
     </div>
   );
 }

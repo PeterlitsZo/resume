@@ -2,7 +2,7 @@ import Header from '../../basic/Header';
 import A from '../../basic/A';
 import SubHeader from '../../basic/SubHeader';
 import SubSubHeader from '../../basic/SubSubHeader';
-import Popover from '../../basic/Popover/Popover';
+import Popover from '../../basic/Popover';
 
 const Link = () => {
   return (
