@@ -26,12 +26,12 @@ const Right: Component<RightProps> = (props) => {
         <SubHeader.Title>字节跳动</SubHeader.Title>
         <SubHeader.Helper>2022.7 - now</SubHeader.Helper>
       </SubHeader>
-      <SubSubHeader>RSER | 面向运维自动化的资源管理工具</SubSubHeader>
+      <SubSubHeader>Leao | 边缘系统的可观测平台</SubSubHeader>
       <ul style={{ 'column-count': 2, 'column-gap': '0.25rem' }}>
-        <li>使用 Golang 语言，为边缘系统的运维自动化做工作：基于 MongoDB，监控和配置配置系统服务。</li>
-        <li>工作积累：累计 4 个 gitlab MR、约 30+ 个 commit，涉及到 feature、bugfix、重构和文档更新。</li>
-        <li>实现需求 - 事务功能（实现中）：基于 MongoDB 的事务功能，设计了 PRC-style HTTP 接口，实现了批量操作（如果有一个操作不合格就回滚，避免出现某个操作失败，难以恢复的问题）。</li>
-        <li>实现需求 - Watch 功能（实现中）：实现观察者模型。</li>
+        <li>Leao 是字节跳动内部边缘云系统中提供可观测性的平台。在职时提供日志服务、指标服务和告警服务。</li>
+        <li>使用 Golang 语言，担任软件工程师，维护 / 开发微服务 LeaoMeta（边缘资源元信息管理微服务）、LeaoKeeper（指标治理微服务）、LeaoAdapter（业务脚本适配器集合）等。</li>
+        <li>工作积累：累计 20+ 个 gitlab MR、约 180+ 个 commit。</li>
+        <li>实现需求 - LeaoMeta 的事务功能、List-Watch 功能、支持 Namespace，LeaoKeeper 的开发、LeaoAdapter 的开发。</li>
       </ul>
       <Header>项目</Header>
       <SubHeader>
