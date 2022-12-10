@@ -17,12 +17,16 @@ const Basic = () => (
   <>
     <SubHeader>基本知识</SubHeader>
     <p>
+      <Tag>掌握</Tag>
+      <DataStruct />, <DesignPattern />
+    </p>
+    <p>
       <Tag>熟悉</Tag>
-      <OS />，<Compiler />，<DB />，<Network />，<DataStruct />，<Algorithm />
+      <OS />, <Compiler />, <DB />, <Network />, <Algorithm />
     </p>
     <p>
       <Tag>了解</Tag>
-      <NetworkSecurity />，<ComputerGraphics />，<DesignPattern />，<ML />，<Professionalism />
+      <NetworkSecurity />, <ComputerGraphics />, <ML />, <Professionalism />
     </p>
   </>
 )

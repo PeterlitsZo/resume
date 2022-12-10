@@ -5,29 +5,25 @@ $prime: hsl(142, 80%, 25%);
 :root {
     --prime: #{$prime};
     --prime-dark: hsl(142, 80%, 10%);
-    --prime-transparent: hsla(142, 80%, 20%, 0.2);
+    --prime-transparent: hsla(142, 80%, 20%, 0.1);
     --danger: hsl(360, 60%, 70%);
     --danger-dark: hsl(360, 60%, 50%);
+    --nav-height: 3.5rem;
 }
 
 html {
     font-size: 12px;
-    background-color: #EEE;
+    background-color: #DDD;
     font-family: "Noto Serif SC", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif, "宋体";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 4rem 0;
-    display: flex;
-    place-content: center;
-
-    @media print {
-        padding: 0;
-    }
+    padding: 0;
 }
 
 code {

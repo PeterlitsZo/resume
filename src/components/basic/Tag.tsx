@@ -1,11 +1,11 @@
-import type { Component } from 'solid-js';
+import type { ParentComponent } from 'solid-js';
 
 import styles from './styles/Tag.module.scss';
 
-const Tag: Component = ({children}) => {
+const Tag: ParentComponent = (props) => {
   return (
     <>
-      <span class={styles.tag}>{children}</span>
+      <span class={styles.tag}>{props.children}</span>
       &nbsp;
     </>
   );

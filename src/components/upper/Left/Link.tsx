@@ -32,7 +32,7 @@ const Link = () => {
           <Popover inA="dev.to://PeterlitsZo" href="https://dev.to/peterlitszo">
             <SubHeader>浏览量</SubHeader>
             <ul>
-              <li>截至目前，浏览量已经达到了 1.1k+。</li>
+              <li>截至目前，浏览量已经达到了 2.3k+。</li>
             </ul>
             <SubHeader>内容</SubHeader>
             <SubSubHeader>安全</SubSubHeader>

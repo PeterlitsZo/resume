@@ -1,10 +1,10 @@
-import type { Component } from 'solid-js';
+import type { ParentComponent } from 'solid-js';
 
 import styles from './styles/SubSubHeader.module.scss';
 
-const SubSubHeader: Component = ({children}) => {
+const SubSubHeader: ParentComponent = (props) => {
   return (
-    <h4 class={styles.subSubHeader}>{children}</h4>
+    <h4 class={styles.subSubHeader}>{props.children}</h4>
   );
 }
 

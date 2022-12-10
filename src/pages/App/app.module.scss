@@ -4,24 +4,33 @@
 .root {
     @include mixin.mainpart;
 
+    margin: calc(4rem + var(--nav-height)) auto 4rem auto;
     display: flex;
     flex-direction: column;
     background-color: white;
     box-shadow: vars.$shadow;
     min-height: 297mm;
+    overflow: auto;
+    position: relative;
 
     @media print {
+        margin: 0;
         border: none;
         box-shadow: none;
         height: 297mm;
     }
 }
 
+.Time {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    color: #777;
+}
+
 .body {
     display: flex;
     flex-direction: row;
-    gap: vars.$left-right-gap;
-    padding: vars.$parts-padding;
     flex: 1;
 
     @media screen and (max-width: vars.$width) {
@@ -32,13 +41,24 @@
 
 .left {
     flex: 100;
+    border-right: 1px solid #0001;
+    padding: vars.$parts-padding;
+    background: #FBFBFB;
 }
 
 .right {
-    flex: 190;
+    flex: 245;
+    padding: vars.$parts-padding;
+    background: white;
+}
+
+.title {
+    border-bottom: 1px solid #0001;
+    background: #F0F0F0;
 }
 
 .footer {
-    border-top: 1px solid vars.$bars-color;
+    border-top: 1px solid #0001;
+    background: #F0F0F0;
     padding: vars.$parts-padding;
 }

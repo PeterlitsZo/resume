@@ -1,4 +1,4 @@
-import type { Component } from 'solid-js';
+import type { Component, ParentComponent, ParentProps } from 'solid-js';
 
 import classNames from 'classnames';
 
@@ -13,7 +13,7 @@ interface HeaderCompoent extends Component<HeaderCompoentProps> {
   Helper: Component;
 }
 
-const SubHeaderMain: Component<HeaderCompoentProps> = (props) => {
+const SubHeader = (props: ParentProps<HeaderCompoentProps>) => {
   const { class: className, children } = props;
 
   return (
@@ -23,15 +23,12 @@ const SubHeaderMain: Component<HeaderCompoentProps> = (props) => {
   );
 }
 
-const SubHeaderTitle: Component = ({ children }) => {
-  return <span class={styles.title}>{children}</span>;
+SubHeader.Title = (props: ParentProps) => {
+  return <span class={styles.title}>{props.children}</span>;
 }
 
-const SubHeaderHelper: Component = ({ children }) => {
-  return <span class={styles.helper}>{children}</span>;
+SubHeader.Helper = (props: ParentProps) => {
+  return <span class={styles.helper}>{props.children}</span>;
 }
-
-const SubHeader: HeaderCompoent = 
-  Object.assign(SubHeaderMain, { Title: SubHeaderTitle, Helper: SubHeaderHelper })
 
 export default SubHeader;

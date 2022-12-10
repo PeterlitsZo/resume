@@ -1,0 +1,21 @@
+@use "../../_vars";
+
+.Bar {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  background-color: #F7F7F7;
+  padding: 0 calc(max(2.5rem, (100% - 210mm) / 2));
+  border-bottom: 1px solid #0001;
+  top: 0;
+  height: var(--nav-height);
+  align-items: center;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  box-shadow: vars.$shadow;
+  z-index: 10;
+
+  @media print {
+    display: none;
+  }
+}

@@ -12,12 +12,20 @@ const Language = () => (
   <>
     <SubHeader>编程语言</SubHeader>
     <p>
-      <Tag>5k - 15k</Tag>
-      <Python />，<CAndCpp />，<wbr /><JavaScriptAndTypeScript />，LaTeX
+      <Tag>熟练</Tag>
+      <JavaScriptAndTypeScript />, Go
     </p>
     <p>
-      <Tag>1k - 5k</Tag>
-      <Rust />，<Shell />，<Java />
+      <Tag>掌握</Tag>
+      <Python />, <Shell />
+    </p>
+    <p>
+      <Tag>熟悉</Tag>
+      <CAndCpp />, LaTeX
+    </p>
+    <p>
+      <Tag>了解</Tag>
+      <Rust />, <Java />
     </p>
   </>
 )

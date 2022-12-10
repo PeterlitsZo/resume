@@ -1,0 +1,15 @@
+@use "../../_vars";
+
+.Button {
+  background-color: white;
+  border: 1px solid #0001;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1rem;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}

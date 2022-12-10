@@ -1,10 +1,10 @@
-import type { Component } from 'solid-js';
+import type { ParentComponent } from 'solid-js';
 
 import styles from './styles/Header.module.scss';
 
-const Header: Component = ({children}) => {
+const Header: ParentComponent = (props) => {
   return (
-    <h2 class={styles.header}>{children}</h2>
+    <h2 class={styles.header}>{props.children}</h2>
   );
 }
 

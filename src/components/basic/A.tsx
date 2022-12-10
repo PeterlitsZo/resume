@@ -33,7 +33,7 @@ const mergeClassProps = <T extends baseClassProps>(
   return [classList, others] as [typeof classList, typeof others];
 };
 
-interface AProps extends JSX.HTMLAttributes<HTMLAnchorElement>, baseClassProps { };
+interface AProps extends JSX.AnchorHTMLAttributes<HTMLAnchorElement>, baseClassProps { };
 
 const A: Component<AProps> = (props) => {
   const [classList, others_tmp] = mergeClassProps(props, { [styles.a]: true });

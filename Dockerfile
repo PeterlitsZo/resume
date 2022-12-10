@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 COPY ["package.json", "yarn.lock", "./"]
 RUN yarn install
 COPY . .
-# The dist is here: /usr/src/app/dist
+# The dist will be here: /usr/src/app/dist
 RUN yarn build
 
 FROM nginx
