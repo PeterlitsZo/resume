@@ -7,7 +7,7 @@ const Edu = () => {
       <Header>教育经历</Header>
       <SubHeader>
         <SubHeader.Title>苏州大学 / 本科</SubHeader.Title>
-        <SubHeader.Helper>2019.09 - 2023.03</SubHeader.Helper>
+        <SubHeader.Helper>2019.09 - 2023.07</SubHeader.Helper>
       </SubHeader>
       <p>学士学位，主修计算机科学与技术</p>
     </>

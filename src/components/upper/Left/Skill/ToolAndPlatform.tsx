@@ -11,19 +11,15 @@ const ToolAndPlatform = () => (
     <SubHeader>工具与平台</SubHeader>
     <p>
       <Tag>熟练</Tag>
-      <Git />, Docker, <Linux />
-    </p>
-    <p>
-      <Tag>掌握</Tag>
-      Mongo-DB
+      <Git />, Docker, <Linux />, Mongo&shy;DB
     </p>
     <p>
       <Tag>熟悉</Tag>
-      <MySQLAndMariaDB />
+      <Redis />, <MySQLAndMariaDB />
     </p>
     <p>
       <Tag>了解</Tag>
-      nginx, <Redis />, Rabbit MQ
+      nginx, Rabbit MQ
     </p>
   </>
 )
