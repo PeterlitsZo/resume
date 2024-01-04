@@ -7,6 +7,10 @@ const Linux = () => (
     <ul>
       <li>《精通 Linux》。</li>
     </ul>
+    <SubHeader>经历</SubHeader>
+    <ul>
+      <li>五年使用经验，对 Bash 脚本熟悉。</li>
+    </ul>
   </Popover>
 );
 

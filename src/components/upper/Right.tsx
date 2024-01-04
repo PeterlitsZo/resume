@@ -18,10 +18,21 @@ const Right: Component<RightProps> = (props) => {
 
   return (
     <Part class={className}>
+      <Header>工作经历</Header>
+      <SubHeader>
+        <SubHeader.Title>滴滴</SubHeader.Title>
+        <SubHeader.Helper>2023.7 - now</SubHeader.Helper>
+      </SubHeader>
+      <SubSubHeader>增长技术 / 营销技术 / 业务线增长</SubSubHeader>
+      <ul style={{ 'column-count': 2, 'column-gap': '0.75rem' }}>
+        <li>在公司内部担任软件工程师，负责使用 Go 语言维护和开发营销活动相关的需求。</li>
+        <li>截至目前，共参与过 9 个需求，完成 436 个提交和 14k 行的代码净添加，包括“滴盟”、“自来水”和“揽客宝”相关需求的开发。</li>
+        <li>工作期间，积极学习，涉猎学习过操作系统、数据库底层原理（并在内部分享过 SimpleSQLite 实现），数据存储与处理和一些分布式存储。</li>
+      </ul>
       <Header>实习经历</Header>
       <SubHeader>
         <SubHeader.Title>字节跳动</SubHeader.Title>
-        <SubHeader.Helper>2022.7 - now</SubHeader.Helper>
+        <SubHeader.Helper>2022.7 - 2023.1</SubHeader.Helper>
       </SubHeader>
       <SubSubHeader>Leao | 边缘系统的可观测平台</SubSubHeader>
       <ul style={{ 'column-count': 2, 'column-gap': '0.75rem' }}>
@@ -55,7 +66,7 @@ const Right: Component<RightProps> = (props) => {
         <li>项目具有较高的单元测试覆盖率；并采取了安全措施，使用 HttpOnly cookie，和 JWT 用户认证，和 bcrypt 存储密码。</li>
         <li>在项目开发过程中，我深入学习了 Node.js，Nest.js，React，Next.js 和 TypeScript 技术，并熟悉了前后端分离、GraphQL 通信和敏捷开发模式等方面的知识。</li>
       </ul>
-      { tag() === 'backend' && (
+      {/* tag() === 'backend' && (
         <>
           <SubHeader>
             <SubHeader.Title>East</SubHeader.Title>
@@ -73,12 +84,12 @@ const Right: Component<RightProps> = (props) => {
             <li>项目包含多个单元测试，保证了代码的可靠性和可维护性。</li>
           </ul>
         </>
-      )}
+      )*/}
       <SubHeader>
         <SubHeader.Title>更多项目</SubHeader.Title>
       </SubHeader>
       <p>
-        请访问我的 Github 主页：<A href="https://www.github.com/PeterlitsZo">Github://PeterlitsZo</A>
+        例如 East（Go 语言编写的信息检索工具）等；请访问我的 Github 主页：<A href="https://www.github.com/PeterlitsZo">Github://PeterlitsZo</A>
       </p>
       {/*
       <Header>开源贡献</Header>

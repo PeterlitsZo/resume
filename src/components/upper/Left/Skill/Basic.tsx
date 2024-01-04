@@ -26,7 +26,7 @@ const Basic = () => (
     </p>
     <p>
       <Tag>了解</Tag>
-      <NetworkSecurity />, <ComputerGraphics />, <ML />, <Professionalism />
+      <NetworkSecurity />, <ComputerGraphics />, <ML />, <Professionalism />，分布式系统
     </p>
   </>
 )

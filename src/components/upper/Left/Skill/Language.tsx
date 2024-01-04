@@ -7,13 +7,14 @@ import JavaScriptAndTypeScript from './elements/JavaScriptAndTypeScript'
 import Rust from './elements/Rust';
 import Shell from './elements/Shell';
 import Java from './elements/Java';
+import Go from './elements/Go';
 
 const Language = () => (
   <>
     <SubHeader>编程语言</SubHeader>
     <p>
       <Tag>熟练</Tag>
-      Go, <Python />, <JavaScriptAndTypeScript />
+      <Go />, <Python />, <JavaScriptAndTypeScript />
     </p>
     <p>
       <Tag>熟悉</Tag>

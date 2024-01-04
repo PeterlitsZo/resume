@@ -54,6 +54,13 @@ const Link = () => {
             </ul>
           </Popover>
         </li>
+        <li>
+          <Popover inA="blogs.peterlits.com" href="https://blogs.peterlits.com">
+            <ul>
+              <li>讨论过和数据库相关的底层细节，例如 ETCD MVCC 和数据库模式等。</li>
+            </ul>
+          </Popover>
+        </li>
       </ul>
     </>
   );
