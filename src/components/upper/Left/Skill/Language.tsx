@@ -1,13 +1,14 @@
-import SubHeader from '../../../basic/SubHeader';
-import Tag from '../../../basic/Tag';
+import SubHeader from "../../../basic/SubHeader";
+import Tag from "../../../basic/Tag";
 
-import Python from './elements/Python';
-import CAndCpp from './elements/CAndCpp';
-import JavaScriptAndTypeScript from './elements/JavaScriptAndTypeScript'
-import Rust from './elements/Rust';
-import Shell from './elements/Shell';
-import Java from './elements/Java';
-import Go from './elements/Go';
+import Python from "./elements/Python";
+import CAndCpp from "./elements/CAndCpp";
+import JavaScriptAndTypeScript from "./elements/JavaScriptAndTypeScript";
+import Rust from "./elements/Rust";
+import Shell from "./elements/Shell";
+import Java from "./elements/Java";
+import Go from "./elements/Go";
+import Perl from "./elements/Perl";
 
 const Language = () => (
   <>
@@ -18,9 +19,13 @@ const Language = () => (
     </p>
     <p>
       <Tag>熟悉</Tag>
-      <CAndCpp />, <Rust />, <Java />, <Shell />, LaTeX
+      <Rust />, <Shell />
+    </p>
+    <p>
+      <Tag>了解</Tag>
+      <CAndCpp />, <Java />, <Perl />, LaTeX
     </p>
   </>
-)
+);
 
 export default Language;

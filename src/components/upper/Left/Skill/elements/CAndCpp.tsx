@@ -1,5 +1,5 @@
-import Popover from '../../../../basic/Popover';
-import SubHeader from '../../../../basic/SubHeader';
+import Popover from "../../../../basic/Popover";
+import SubHeader from "../../../../basic/SubHeader";
 
 const CAndCpp = () => (
   <Popover inSpan="C/C++">
@@ -10,7 +10,8 @@ const CAndCpp = () => (
     </ul>
     <SubHeader>经历</SubHeader>
     <ul>
-      <li>竞赛所需，写过大量面向比赛的代码。</li>
+      <li>在校期间，竞赛所需，写过大量面向比赛的代码。</li>
+      <li>对 C 和 C++ 有着基础的了解，熟悉 C 和 C++ 的基础概念。</li>
     </ul>
     <SubHeader>绩点</SubHeader>
     <ul>

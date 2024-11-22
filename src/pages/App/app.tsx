@@ -16,7 +16,7 @@ export const App: Component = () => {
       <Bar />
       <div ref={root} class={styles.root}>
         <div class={styles.Time}>
-          更新于 2024 / 1 / 4 日
+          更新于 2024 / 11 / 23 日
         </div>
         <Title class={styles.title} />
         <div class={styles.body}>

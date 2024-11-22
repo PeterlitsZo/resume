@@ -1,5 +1,5 @@
-import Popover from '../../../../basic/Popover';
-import SubHeader from '../../../../basic/SubHeader';
+import Popover from "../../../../basic/Popover";
+import SubHeader from "../../../../basic/SubHeader";
 
 const Python = () => (
   <Popover inSpan="Python">
@@ -11,9 +11,12 @@ const Python = () => (
     </ul>
     <SubHeader>经历</SubHeader>
     <ul>
-      <li>大多数一次性工具。</li>
-      <li>网络爬虫。</li>
-      <li>编译原理习题。</li>
+      <li>
+        在校期间，使用 Python 编写大多数一次性工具、网络爬虫和编译原理习题。
+      </li>
+      <li>
+        工作期间也使用 Python 来编写部分简单的脚本。了解基本的 Python 语法。
+      </li>
     </ul>
     <SubHeader>绩点</SubHeader>
     <ul>
